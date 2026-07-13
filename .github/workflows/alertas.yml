@@ -1,0 +1,34 @@
+name: Alertas Semestre Bot
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 07:00 Ecuador -> alerta diaria
+    - cron: "0 0 * * 1"    # domingo 19:00 Ecuador -> alerta semanal
+  workflow_dispatch:        # boton para ejecutarlo a mano
+    inputs:
+      tipo:
+        description: "Alerta a enviar (solo para ejecucion manual)"
+        type: choice
+        options: [diaria, semanal]
+        default: diaria
+
+jobs:
+  enviar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml requests
+      - name: Enviar alerta
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 0 * * 1" ]; then
+            python alertas.py semanal
+          elif [ "${{ github.event.schedule }}" = "0 12 * * *" ]; then
+            python alertas.py diaria
+          else
+            python alertas.py ${{ github.event.inputs.tipo }}
+          fi
