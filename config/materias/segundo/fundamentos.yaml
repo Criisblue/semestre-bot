@@ -1,0 +1,48 @@
+id: fundamentos
+nombre: "Fundamentos de Ciencia de Datos e Inteligencia Artificial"
+docente: "Milton Paul López Ramos"
+
+unidades:
+  - id: U1
+    nombre: "Fundamentos de Ciencia de los Datos e Inteligencia Artificial"
+    objetivo: "Describe generalidades de la Ciencia de Datos y la IA para identificar su importancia en los negocios, e investiga sobre modelos matemáticos, estadística, machine learning y la eficiencia de los sistemas informáticos."
+    temas:
+      - nombre: "Introducción a la Ciencia de Datos e IA"
+        semanas: [1, 2]
+        subtemas: ["Conceptos básicos", "Historia y evolución", "Ciencia de Datos vs IA", "Áreas de aplicación"]
+      - nombre: "El proceso de ciencia de datos"
+        semanas: [3, 4]
+        subtemas: ["Etapas", "Tipos de proyectos", "Infraestructura y recursos", "Herramientas y utilidades"]
+
+  - id: U2
+    nombre: "Gestión de la Información y Conocimiento"
+    objetivo: "Diseña nuevos modelos de negocio basados en el valor de la información y conoce normativas y buenas prácticas enfocadas a la ciencia de los datos."
+    temas:
+      - nombre: "Gestión de Datos Empresariales"
+        semanas: [5, 6]
+        subtemas: ["Integración de datos", "Calidad de datos", "Ciberseguridad", "Gestión de acceso"]
+      - nombre: "Aprendizaje Organizacional"
+        semanas: [7, 8]
+        subtemas: ["Cultura de aprendizaje", "Gestión del conocimiento tácito y explícito", "Tecnologías emergentes", "Plataformas colaborativas"]
+
+  - id: U3
+    nombre: "Sistemas de Información inteligentes para la toma de decisiones"
+    objetivo: "Aplica técnicas de análisis inteligente de datos para interpretar soluciones y generar reportes para la toma de decisiones, usando adecuadamente los recursos y cumpliendo leyes y regulaciones."
+    temas:
+      - nombre: "Fundamentos de Sistemas de Información Inteligentes"
+        semanas: [9, 10]
+        subtemas: ["Concepto", "Arquitectura", "Técnicas de aprendizaje automático aplicadas", "Interconexión y comunicación"]
+      - nombre: "Aplicaciones Prácticas de Sistemas de Información Inteligentes"
+        semanas: [11, 12]
+        subtemas: ["Desafíos tecnológicos y limitaciones", "Ética en la toma de decisiones automatizada", "Sesgos y discriminación en algoritmos", "Integración con la toma de decisiones humana"]
+
+  - id: U4
+    nombre: "Gobierno y gestión de los Datos"
+    objetivo: "Gestiona adecuadamente el gobierno de datos para garantizar la calidad de las soluciones y desarrolla competencias para la analítica de datos, modelamiento y gestión de TI."
+    temas:
+      - nombre: "Gobierno, gestión y calidad del dato"
+        semanas: [13, 14]
+        subtemas: ["Introducción", "Componentes de un sistema de gobierno del dato", "Marcos y metodologías", "Gestión de calidad del dato"]
+      - nombre: "Técnicas de análisis, minería, visualización y automatización"
+        semanas: [15, 16]
+        subtemas: ["Herramientas para el análisis", "Conceptos básicos de Machine Learning", "Minería de textos", "Informes reproducibles con R Markdown y Quarto"]

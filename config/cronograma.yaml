@@ -1,0 +1,109 @@
+semestre: "2026-1S"
+zona_horaria: "America/Guayaquil"
+
+fechas:
+  inicio: 2026-04-01
+  fin: 2026-08-07
+
+# Las 16 semanas de contenido (lunes a domingo)
+semanas:
+  - numero: 1
+    inicio: 2026-04-01
+    fin: 2026-04-05
+  - numero: 2
+    inicio: 2026-04-06
+    fin: 2026-04-12
+  - numero: 3
+    inicio: 2026-04-13
+    fin: 2026-04-19
+  - numero: 4
+    inicio: 2026-04-20
+    fin: 2026-04-26
+  - numero: 5
+    inicio: 2026-04-27
+    fin: 2026-05-03
+  - numero: 6
+    inicio: 2026-05-04
+    fin: 2026-05-10
+  - numero: 7
+    inicio: 2026-05-11
+    fin: 2026-05-17
+  - numero: 8
+    inicio: 2026-05-18
+    fin: 2026-05-24
+  - numero: 9
+    inicio: 2026-05-25
+    fin: 2026-05-31
+  - numero: 10
+    inicio: 2026-06-08
+    fin: 2026-06-14
+  - numero: 11
+    inicio: 2026-06-15
+    fin: 2026-06-21
+  - numero: 12
+    inicio: 2026-06-22
+    fin: 2026-06-28
+  - numero: 13
+    inicio: 2026-06-29
+    fin: 2026-07-05
+  - numero: 14
+    inicio: 2026-07-06
+    fin: 2026-07-12
+  - numero: 15
+    inicio: 2026-07-13
+    fin: 2026-07-19
+  - numero: 16
+    inicio: 2026-07-20
+    fin: 2026-07-26
+
+# Mapa de unidades -> semanas que la componen
+unidades:
+  - id: U1
+    semanas: [1, 2, 3, 4]
+  - id: U2
+    semanas: [5, 6, 7, 8]
+  - id: U3
+    semanas: [9, 10, 11, 12]
+  - id: U4
+    semanas: [13, 14, 15, 16]
+
+# Parciales (rangos de fechas)
+parciales:
+  - nombre: "Primer parcial"
+    inicio: 2026-06-01
+    fin: 2026-06-05
+  - nombre: "Segundo parcial"
+    inicio: 2026-07-27
+    fin: 2026-07-31
+  - nombre: "Recuperación"
+    inicio: 2026-08-03
+    fin: 2026-08-07
+
+# Feriados (con día de recuperación si aplica)
+feriados:
+  - fecha: 2026-04-03
+    nombre: "Viernes Santo"
+  - fecha: 2026-04-20
+    nombre: "Feriado"
+    recupera: 2026-04-25
+  - fecha: 2026-05-01
+    nombre: "Día del Trabajo"
+  - fecha: 2026-05-25
+    nombre: "Feriado"
+    recupera: 2026-05-29
+
+# Reglas de entregables (fechas propias de este semestre)
+entregables:
+  # TASK (H5P): vence según el bloque de semanas al que pertenece
+  task:
+    - semanas: [1, 2, 3, 4, 5, 6, 7, 8]
+      vence: 2026-05-31
+    - semanas: [9, 10, 11, 12, 13, 14, 15, 16]
+      vence: 2026-07-26
+  # QUIZ con fecha fija (excepciones de las semanas 1 y 2).
+  # El resto de quizzes se calcula desde el horario del paralelo.
+  quiz_fijos:
+    - semana: 1
+      vence: 2026-04-05
+    - semana: 2
+      vence: 2026-04-12

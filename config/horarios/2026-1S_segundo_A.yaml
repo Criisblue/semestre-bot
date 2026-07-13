@@ -1,0 +1,31 @@
+semestre: "2026-1S"
+nivel: "segundo"
+paralelo: "A"
+aula: "AUV4"
+
+# tipo: practico | en_vivo | tutorial
+horario:
+  lunes:
+    - { hora: 17, materia: probabilidad, tipo: practico }
+    - { hora: 18, materia: probabilidad, tipo: en_vivo }
+    - { hora: 19, materia: probabilidad, tipo: en_vivo }
+    - { hora: 20, materia: estructura, tipo: en_vivo }
+    - { hora: 21, materia: estructura, tipo: en_vivo }
+  martes:
+    - { hora: 17, materia: fundamentos, tipo: practico }
+    - { hora: 18, materia: programacion2, tipo: en_vivo }
+    - { hora: 19, materia: programacion2, tipo: en_vivo }
+    - { hora: 20, materia: probabilidad, tipo: tutorial }
+    - { hora: 21, materia: habilidades, tipo: en_vivo }
+  miercoles:
+    - { hora: 17, materia: programacion2, tipo: practico }
+    - { hora: 18, materia: habilidades, tipo: practico }
+    - { hora: 19, materia: fundamentos, tipo: en_vivo }
+    - { hora: 20, materia: fundamentos, tipo: en_vivo }
+    - { hora: 21, materia: fundamentos, tipo: en_vivo }
+  jueves:
+    - { hora: 17, materia: estructura, tipo: practico }
+    - { hora: 18, materia: fundamentos, tipo: tutorial }
+    - { hora: 19, materia: programacion2, tipo: tutorial }
+    - { hora: 20, materia: estructura, tipo: tutorial }
+    - { hora: 21, materia: habilidades, tipo: tutorial }
