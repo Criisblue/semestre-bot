@@ -1,17 +1,16 @@
 import os
 import motor
+import db
 from datetime import date
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
 TOKEN = os.environ["BOT_TOKEN"]
 CRONO = motor.cargar_cronograma()
-registro = {}
 
 
 def horario_de(chat_id):
-    """Carga el horario del paralelo con que el usuario se registró, o None."""
-    reg = registro.get(chat_id)
+    reg = db.obtener_usuario(chat_id)
     if reg is None:
         return None
     nombre = f"{CRONO['semestre']}_{reg['semestre']}_{reg['paralelo']}"
@@ -44,7 +43,7 @@ async def boton(update, context):
     elif dato.startswith("par:"):
         paralelo = dato.split(":")[1]
         semestre = context.user_data.get("semestre", "segundo")
-        registro[query.message.chat_id] = {"semestre": semestre, "paralelo": paralelo}
+        db.guardar_usuario(query.message.chat_id, semestre, paralelo)
         await query.edit_message_text(
             f"✅ Registrado: {semestre} paralelo {paralelo}.\n"
             "Comandos: /donde /horario /semana /unidad"
@@ -116,7 +115,7 @@ async def semana(update, context):
 
 
 async def unidad(update, context):
-    reg = registro.get(update.message.chat_id)
+    reg = db.obtener_usuario(update.message.chat_id)
     if reg is None:
         await update.message.reply_text("Primero regístrate con /start.")
         return
@@ -144,6 +143,7 @@ async def unidad(update, context):
 
 
 def main():
+    db.init_db()
     app = Application.builder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("donde", donde))
