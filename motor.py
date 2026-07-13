@@ -21,6 +21,8 @@ def cargar_cronograma():
 def cargar_horario(nombre):
     return cargar_yaml(CONFIG / "horarios" / f"{nombre}.yaml")
 
+def cargar_materia(semestre, materia):
+    return cargar_yaml(CONFIG / "materias" / semestre / f"{materia}.yaml")
 
 def semana_actual(fecha, crono):
     """Devuelve el número de semana (1-16) en que cae la fecha, o None si no cae en ninguna."""
@@ -116,7 +118,15 @@ def proximo_parcial(fecha, crono):
     futuros = [p for p in crono["parciales"] if p["inicio"] >= fecha]
     if not futuros:
         return None
-    return min(futuros, key=lambda p: p["inicio"])
+    return min(futuros, key=lambda p: p["inicio"])	
+
+def tema_de_semana(numero_semana, crono):
+    """Devuelve 1 o 2 según la posición de la semana dentro de su unidad."""
+    for u in crono["unidades"]:
+        semanas = sorted(u["semanas"])
+        if numero_semana in semanas:
+            return 1 if semanas.index(numero_semana) < 2 else 2
+    return None
 
 if __name__ == "__main__":
     crono = cargar_cronograma()
